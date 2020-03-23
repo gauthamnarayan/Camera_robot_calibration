@@ -13,34 +13,28 @@ Our current procedure for camera-robot calibration:
 Usually ~10 poses should be sufficient to estimate the camera extrinsics. The script also produces a visualisation of the sphere fit, this is usefull to debug isssues.
 
 Run main.m to with the following folder structure to obtain the camera extrinsic parameters. 
-
 .  
-├── compute_global_calibration_with_robot.m  
-├── data  
-│   ├── camera_1  
-│   │   ├── 10.pcd  
-│   │   ├── 1.pcd  
-│   │   ├── 2.pcd  
-│   │   ├── 3.pcd  
-│   │   ├── 4.pcd  
-│   │   ├── 5.pcd  
-│   │   ├── 6.pcd  
-│   │   ├── 7.pcd  
-│   │   ├── 8.pcd  
-│   │   └── 9.pcd  
-│   └── robot_poses.txt  
-├── extrinsic_cal.m  
-├── main.m  
-├── multi_extrinsic_cal.m  
-├── radius_cal.m  
-├── rs_check_calibration.m  
-└── rs_extrinsic_cal.m  
+├── camera_1  
+│   ├── 10.pcd  
+│   ├── 1.pcd  
+│   ├── 2.pcd  
+│   ├── 3.pcd  
+│   ├── 4.pcd  
+│   ├── 5.pcd  
+│   ├── 6.pcd  
+│   ├── 7.pcd  
+│   ├── 8.pcd  
+│   └── 9.pcd  
+└── robot_poses.txt  
 
+robot_poses.txt is a N x 7 matrix of [x y z q0 qx qy qz]
+  
 # Background points removal:
 
-Compile the background subtraction code from here XXX:   
+Compile the background subtraction code from [here](https://github.com/gauthamnarayan/Camera_robot_calibration/blob/master/background_subtraction.cpp):   
 Dependencies: PCL and OpenCV C++ Libraries
 
-Run the code as ./background_subtraction drawImage(yes/no) folderPath inputFileNumber(1/2/3...10) BBLimit Size_of_AprilTag(meters)  
+Run the code as   
+./background_subtraction  drawImage(yes/no) folderPath  inputFileNumber(1/2/3...10) BBLimit Size_of_AprilTag(meters)  
 
 
